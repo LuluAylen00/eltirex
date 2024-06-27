@@ -1,0 +1,5951 @@
+{
+    "12-casas": {
+        "leo": {
+            "id": 1,
+            "name": "Casa de Leo",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "L - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "L - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "L - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "L - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "L - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "L - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "L - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "L - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "L - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "L - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "L - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "L - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "L - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "L - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "L - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "L - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": 2,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 9,
+                        "score": 2
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": "https://aoe2cm.net/draft/tyiSe",
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 9
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": 4,
+                        "score": 1
+                    },
+                    "jugadorDos": {
+                        "id": 5,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 4
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": 6,
+                        "score": 1
+                    },
+                    "jugadorDos": {
+                        "id": 7,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 6
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 8,
+                        "score": 1
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 8
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": 1,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": 9,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 4,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": 6,
+                        "score": 2
+                    },
+                    "jugadorDos": {
+                        "id": 8,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 6
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 6,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "tauro": {
+            "id": 2,
+            "name": "Casa de tauro",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "T - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "T - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "T - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "T - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "T - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "T - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "T - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "T - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "T - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "T - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "T - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "T - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "T - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "T - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "T - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "T - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": 1,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "geminis": {
+            "id": 3,
+            "name": "Casa de geminis",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "G - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "G - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "G - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "G - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "G - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "G - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "G - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "G - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "G - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "G - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "G - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "G - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "G - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "G - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "G - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "G - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "piscis": {
+            "id": 4,
+            "name": "Casa de piscis",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "P - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "P - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "P - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "P - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "P - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "P - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "P - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "P - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "P - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "P - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "P - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "P - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "P - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "P - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "P - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "P - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "acuario": {
+            "id": 5,
+            "name": "Casa de acuario",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "A - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "A - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "A - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "A - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "A - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "A - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "A - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "A - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "A - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "A - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "A - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "A - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "A - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "A - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "A - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "A - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "cancer": {
+            "id": 6,
+            "name": "Casa de cancer",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "C - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "C - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "C - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "C - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "C - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "C - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "C - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "C - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "C - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "C - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "C - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "C - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "C - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "C - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "C - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "C - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "capricornio": {
+            "id": 7,
+            "name": "Casa de capricornio",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "CAP - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "CAP - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "CAP - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "CAP - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "CAP - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "CAP - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "CAP - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "CAP - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "CAP - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "CAP - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "CAP - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "CAP - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "CAP - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "CAP - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "CAP - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "CAP - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "aries": {
+            "id": 8,
+            "name": "Casa de aries",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "AR - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "AR - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "AR - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "AR - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "AR - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "AR - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "AR - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "AR - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "AR - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "AR - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "AR - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "AR - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "AR - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "AR - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "AR - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "AR - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "libra": {
+            "id": 9,
+            "name": "Casa de libra",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "L - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "L - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "L - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "L - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "L - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "L - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "L - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "L - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "L - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "L - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "L - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "L - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "L - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "L - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "L - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "L - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "escorpio": {
+            "id": 10,
+            "name": "Casa de escorpio",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "E - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "E - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "E - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "E - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "E - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "E - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "E - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "E - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "E - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "E - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "E - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "E - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "E - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "E - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "E - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "E - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "sagitario": {
+            "id": 11,
+            "name": "Casa de sagitario",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "S - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "S - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "S - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "S - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "S - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "S - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "S - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "S - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "S - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "S - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "S - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "S - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "S - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "S - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "S - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "S - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "virgo": {
+            "id": 12,
+            "name": "Casa de virgo",
+            "description": null,
+            "type": "1v1",
+            "prizepool": {
+                "1": {
+                    "name": "1°",
+                    "amount": "3k",
+                    "points": "12",
+                    "player": null
+                },
+                "2": {
+                    "name": "2°",
+                    "amount": "2k",
+                    "points": "6",
+                    "player": null
+                },
+                "3": {
+                    "name": "3°",
+                    "amount": "1k",
+                    "points": "3",
+                    "player": null
+                },
+                "4": {
+                    "name": "4°",
+                    "amount": "3k",
+                    "points": "1",
+                    "player": null
+                }
+            },
+            "handbook": null,
+            "poolmap": null,
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "V - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "V - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "V - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "V - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "V - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "V - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "V - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "V - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "V - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "V - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "V - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "V - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "V - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "V - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "V - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "V - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        },
+        "undefined": {
+            "players": [
+                {
+                    "id": 1,
+                    "nick": "L - P 1",
+                    "elo": null,
+                    "semilla": 1
+                },
+                {
+                    "id": 2,
+                    "nick": "L - Jugador 2",
+                    "elo": null,
+                    "semilla": 2
+                },
+                {
+                    "id": 3,
+                    "nick": "L - Jugador 3",
+                    "elo": null,
+                    "semilla": 3
+                },
+                {
+                    "id": 4,
+                    "nick": "L - Jugador 4",
+                    "elo": null,
+                    "semilla": 4
+                },
+                {
+                    "id": 5,
+                    "nick": "L - Jugador 5",
+                    "elo": null,
+                    "semilla": 5
+                },
+                {
+                    "id": 6,
+                    "nick": "L - Jugador 6",
+                    "elo": null,
+                    "semilla": 6
+                },
+                {
+                    "id": 7,
+                    "nick": "L - Jugador 7",
+                    "elo": null,
+                    "semilla": 7
+                },
+                {
+                    "id": 8,
+                    "nick": "L - Jugador 8",
+                    "elo": null,
+                    "semilla": 8
+                },
+                {
+                    "id": 9,
+                    "nick": "L - Jugador 9",
+                    "elo": null,
+                    "semilla": 9
+                },
+                {
+                    "id": 10,
+                    "nick": "L - Jugador 10",
+                    "elo": null,
+                    "semilla": 10
+                },
+                {
+                    "id": 11,
+                    "nick": "L - Jugador 11",
+                    "elo": null,
+                    "semilla": 11
+                },
+                {
+                    "id": 12,
+                    "nick": "L - Jugador 12",
+                    "elo": null,
+                    "semilla": 12
+                },
+                {
+                    "id": 13,
+                    "nick": "L - Jugador 13",
+                    "elo": null,
+                    "semilla": 13
+                },
+                {
+                    "id": 14,
+                    "nick": "L - Jugador 14",
+                    "elo": null,
+                    "semilla": 14
+                },
+                {
+                    "id": 15,
+                    "nick": "L - Jugador 15",
+                    "elo": null,
+                    "semilla": 15
+                },
+                {
+                    "id": 16,
+                    "nick": "L - Jugador 16",
+                    "elo": null,
+                    "semilla": 16
+                }
+            ],
+            "matches": [
+                {
+                    "id": 1,
+                    "jugadorUno": {
+                        "id": 2,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 9,
+                        "score": 2
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": "https://aoe2cm.net/draft/tyiSe",
+                        "map_draft": "https://aoe2cm.net/draft/tyiSe",
+                        "horario": null
+                    },
+                    "ganador": 9
+                },
+                {
+                    "id": 2,
+                    "jugadorUno": {
+                        "id": 4,
+                        "score": 1
+                    },
+                    "jugadorDos": {
+                        "id": 5,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 4
+                },
+                {
+                    "id": 3,
+                    "jugadorUno": {
+                        "id": 6,
+                        "score": 1
+                    },
+                    "jugadorDos": {
+                        "id": 7,
+                        "score": 0
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 6
+                },
+                {
+                    "id": 4,
+                    "jugadorUno": {
+                        "id": 1,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 8,
+                        "score": 1
+                    },
+                    "etapa": 1,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 8
+                },
+                {
+                    "id": 5,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 6,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 7,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 8,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 9,
+                    "jugadorUno": {
+                        "id": 9,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 4,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 10,
+                    "jugadorUno": {
+                        "id": 6,
+                        "score": 2
+                    },
+                    "jugadorDos": {
+                        "id": 8,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": 6
+                },
+                {
+                    "id": 11,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 12,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 2,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 13,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": 6,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 14,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 3,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 15,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                },
+                {
+                    "id": 16,
+                    "jugadorUno": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "jugadorDos": {
+                        "id": null,
+                        "score": 0
+                    },
+                    "etapa": 4,
+                    "caracteristicas": {
+                        "civ_draft": null,
+                        "map_draft": null,
+                        "horario": null
+                    },
+                    "ganador": null
+                }
+            ]
+        }
+    },
+    "master-16": {
+        "id": 13,
+        "name": "Master 16",
+        "description": null,
+        "type": "TG",
+        "prizepool": {
+            "1": {
+                "name": "1°",
+                "amount": "3k",
+                "points": "12",
+                "player": null
+            },
+            "2": {
+                "name": "2°",
+                "amount": "2k",
+                "points": "6",
+                "player": null
+            },
+            "3": {
+                "name": "3°",
+                "amount": "1k",
+                "points": "3",
+                "player": null
+            },
+            "4": {
+                "name": "4°",
+                "amount": "3k",
+                "points": "1",
+                "player": null
+            }
+        },
+        "handbook": null,
+        "poolmap": null,
+        "matches": [
+            {
+                "id": 1,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 1,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 2,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 1,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 3,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 1,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 4,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 1,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 5,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 6,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 7,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 3,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 8,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 4,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 9,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 10,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 11,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 12,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 2,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 13,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 3,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 14,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 3,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 15,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 4,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            },
+            {
+                "id": 16,
+                "jugadorUno": {
+                    "id": null,
+                    "score": 0
+                },
+                "jugadorDos": {
+                    "id": null,
+                    "score": 0
+                },
+                "etapa": 4,
+                "caracteristicas": {
+                    "civ_draft": null,
+                    "map_draft": null,
+                    "horario": null
+                },
+                "ganador": null
+            }
+        ],
+        "teams": [
+            {
+                "id": 1,
+                "name": "XEVER \"A\"",
+                "elo": "1938",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "NAHUE05",
+                        "elo": "1972",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "PRISMA09",
+                        "elo": "1950",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "RIVUX",
+                        "elo": "1965",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "TATENGUE",
+                        "elo": "1821",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "ESKABE",
+                        "elo": "1866",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "BL4CK",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "xever.png",
+                "semilla": 1
+            },
+            {
+                "id": 2,
+                "name": "ZZ",
+                "elo": "1929",
+                "players": [],
+                "logo": "zz.png",
+                "semilla": 2
+            },
+            {
+                "id": 3,
+                "name": "DUMBO",
+                "elo": "1860",
+                "players": [],
+                "logo": "dumbo.png",
+                "semilla": 3
+            },
+            {
+                "id": 4,
+                "name": "DARKSIDE \"A\"",
+                "elo": "1829",
+                "players": [],
+                "logo": "ds.png",
+                "semilla": 4
+            },
+            {
+                "id": 5,
+                "name": "XEVER \"AVENGERS\"",
+                "elo": "1756",
+                "players": [],
+                "logo": "xever.png",
+                "semilla": 5
+            },
+            {
+                "id": 6,
+                "name": "DGHIR",
+                "elo": "1708",
+                "players": [],
+                "logo": "dghir.png",
+                "semilla": 6
+            },
+            {
+                "id": 7,
+                "name": "DARKSIDE \"B\"",
+                "elo": "1654",
+                "players": [],
+                "logo": "ds.png",
+                "semilla": 7
+            },
+            {
+                "id": 8,
+                "name": "XEVER \"106\"",
+                "elo": "1652",
+                "players": [],
+                "logo": "xever.png",
+                "semilla": 8
+            },
+            {
+                "id": 9,
+                "name": "TM",
+                "elo": "1632",
+                "players": [],
+                "logo": "tm.png",
+                "semilla": 9
+            },
+            {
+                "id": 10,
+                "name": "SOLIDOS",
+                "elo": "1624",
+                "players": [],
+                "logo": "s2.png",
+                "semilla": 10
+            },
+            {
+                "id": 11,
+                "name": "NEOLIBERALES",
+                "elo": "1572",
+                "players": [],
+                "logo": "neo.png",
+                "semilla": 11
+            },
+            {
+                "id": 12,
+                "name": "GOLPE BAJO",
+                "elo": "1562",
+                "players": [],
+                "logo": "golpebajo.png",
+                "semilla": 12
+            },
+            {
+                "id": 13,
+                "name": "CORP",
+                "elo": "1534",
+                "players": [],
+                "logo": "corp.png",
+                "semilla": 13
+            },
+            {
+                "id": 14,
+                "name": "CLAN ARG \"A\"",
+                "elo": "1528",
+                "players": [],
+                "logo": "arg.png",
+                "semilla": 14
+            },
+            {
+                "id": 15,
+                "name": "CLAN ARG \"B\"",
+                "elo": "1495",
+                "players": [],
+                "logo": "arg.png",
+                "semilla": 15
+            },
+            {
+                "id": 16,
+                "name": "XEVER \"D\"",
+                "elo": "1476",
+                "players": [],
+                "logo": "xever.png",
+                "semilla": 16
+            }
+        ]
+    },
+    "cs": {},
+    "otro-que-no-me-acuerdo": {}
+}
