@@ -228,6 +228,7 @@ div#logos > a > * {
 .main-link-12-casas {
   position: absolute;
   left: 10vw;
+  /* cursor: pointer; */
 }
 
 .main-link-master-16 {

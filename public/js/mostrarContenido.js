@@ -807,11 +807,12 @@ async function mostrarContenido(ruta) {
             let enlace12Casas = document.createElement("a");
             enlace12Casas.classList.add("main-link-12-casas");
             enlace12Casas.classList.add("main-link-a");
-            enlace12Casas.setAttribute("href", "/12-casas");
+            enlace12Casas.setAttribute("title", "Proximamente...");
+            // enlace12Casas.setAttribute("href", "/12-casas");
             
             let logo12Casas = document.createElement("img");
             logo12Casas.classList.add("homepage-nav-logo");
-            logo12Casas.setAttribute("src","/img/this/12-casas-final.png");
+            logo12Casas.setAttribute("src","/img/this/12-casas-final-prox.png");
             enlace12Casas.appendChild(logo12Casas);
 
             homeDiv.appendChild(enlace12Casas);
