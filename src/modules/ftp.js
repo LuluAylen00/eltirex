@@ -8,6 +8,7 @@ var client = new ftp();
 
 require('dotenv').config();
 
+// console.log(process.env);
 // Conectarse al servidor FTP
 client.connect({
     host: process.env.FTP_HOST, // El host del servidor FTP

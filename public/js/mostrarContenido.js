@@ -831,6 +831,33 @@ async function mostrarContenido(ruta) {
             
             mainLogo.style.opacity = 0;
             document.getElementById("main-cont").innerHTML = homeDiv.outerHTML;
+
+            let contSpan = document.createElement("span");
+            contSpan.classList.add("publi");
+
+            let firstText = document.createElement("span");
+            firstText.innerHTML = "Página web creada por ";
+            contSpan.appendChild(firstText);
+
+            let secondText = document.createElement("a");
+            secondText.innerHTML = "Aylen Martinez";
+            secondText.href = "https://linktr.ee/LuluAylen00";
+            secondText.classList.add("main-links");
+            secondText.setAttribute("target","_blank");
+            contSpan.appendChild(secondText);
+
+            let thirdText = document.createElement("span");
+            thirdText.innerHTML = " | Diseños realizados por ";
+            contSpan.appendChild(thirdText);
+
+            let fourthText = document.createElement("a");
+            fourthText.innerHTML = "Conci Disegno";
+            fourthText.href = "https://www.instagram.com/conci_disegno_/";
+            fourthText.classList.add("main-links");
+            fourthText.setAttribute("target","_blank");
+            contSpan.appendChild(fourthText);
+            document.getElementById("main-cont").appendChild(contSpan);
+
             actualizarLinks();
             break;
         case "/master-16":{
@@ -859,20 +886,20 @@ async function mostrarContenido(ruta) {
                 <div id="main">
                     <div id="left-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 1).id}" id="first-match" class="match">
-                            <span id="slot-1">${buscarPartida(torneo.matches, 1).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).name : 1}${buscarPartida(torneo.matches, 1).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-9">${buscarPartida(torneo.matches, 1).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).name : 9}${buscarPartida(torneo.matches, 1).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-1">1${buscarPartida(torneo.matches, 1).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 1).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-9">16${buscarPartida(torneo.matches, 1).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 1).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 2).id}" id="second-match" class="match">
-                            <span id="slot-5">${buscarPartida(torneo.matches, 2).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).name : 5}${buscarPartida(torneo.matches, 2).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-13">${buscarPartida(torneo.matches, 2).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).name : 13}${buscarPartida(torneo.matches, 2).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-5">9${buscarPartida(torneo.matches, 2).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 2).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-13">8${buscarPartida(torneo.matches, 2).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 2).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 2).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 3).id}" id="third-match" class="match">
-                            <span id="slot-3">${buscarPartida(torneo.matches, 3).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).name : 3}${buscarPartida(torneo.matches, 3).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-11">${buscarPartida(torneo.matches, 3).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).name : 11}${buscarPartida(torneo.matches, 3).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-3">5${buscarPartida(torneo.matches, 3).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 3).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-11">12${buscarPartida(torneo.matches, 3).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 3).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 3).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 4).id}" id="fourth-match" class="match">
-                            <span id="slot-7">${buscarPartida(torneo.matches, 4).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).name : 7}${buscarPartida(torneo.matches, 4).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-15">${buscarPartida(torneo.matches, 4).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).name : 15}${buscarPartida(torneo.matches, 4).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-7">13${buscarPartida(torneo.matches, 4).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 4).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-15">4${buscarPartida(torneo.matches, 4).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 4).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 4).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                     </div>
                     
@@ -882,20 +909,20 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-master16-bracket.png" />
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
-                            <span id="slot-2">${buscarPartida(torneo.matches, 5).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).name : 2}${buscarPartida(torneo.matches, 5).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-10">${buscarPartida(torneo.matches, 5).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).name : 10}${buscarPartida(torneo.matches, 5).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-2">3${buscarPartida(torneo.matches, 5).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 5).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-10">14${buscarPartida(torneo.matches, 5).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 5).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 5).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 6).id}" id="sixth-match" class="match">
-                            <span id="slot-6">${buscarPartida(torneo.matches, 6).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).name : 6}${buscarPartida(torneo.matches, 6).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-14">${buscarPartida(torneo.matches, 6).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).name : 14}${buscarPartida(torneo.matches, 6).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-6">6${buscarPartida(torneo.matches, 6).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 6).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-14">11${buscarPartida(torneo.matches, 6).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 6).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 6).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 7).id}" id="seventh-match" class="match">
-                            <span id="slot-4">${buscarPartida(torneo.matches, 7).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).name : 4}${buscarPartida(torneo.matches, 7).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-12">${buscarPartida(torneo.matches, 7).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).name : 12}${buscarPartida(torneo.matches, 7).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-4">7${buscarPartida(torneo.matches, 7).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 7).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-12">10${buscarPartida(torneo.matches, 7).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 7).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 7).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                         <div data-match="${buscarPartida(torneo.matches, 8).id}" id="eight-match" class="match">
-                            <span id="slot-8">${buscarPartida(torneo.matches, 8).jugadorUno.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).name : 8}${buscarPartida(torneo.matches, 8).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
-                            <span id="slot-16">${buscarPartida(torneo.matches, 8).jugadorDos.id ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).name : 16}${buscarPartida(torneo.matches, 8).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-8">15${buscarPartida(torneo.matches, 8).jugadorUno.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).name : ""}${buscarPartida(torneo.matches, 8).jugadorUno.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorUno.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
+                            <span id="slot-16">2${buscarPartida(torneo.matches, 8).jugadorDos.id ? " - " + buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).name : ""}${buscarPartida(torneo.matches, 8).jugadorDos.id ? "<img src='/img/logos/"+ `${ buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).logo ? buscarJugador(torneo.teams, buscarPartida(torneo.matches, 8).jugadorDos.id).logo : 'default.png'}` + "'></img>" :  ""}</span>
                         </div>
                     </div>
                 </div>

@@ -5492,11 +5492,11 @@
             {
                 "id": 1,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 1,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 16,
                     "score": 0
                 },
                 "etapa": 1,
@@ -5510,11 +5510,11 @@
             {
                 "id": 2,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 9,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 7,
                     "score": 0
                 },
                 "etapa": 1,
@@ -5528,11 +5528,11 @@
             {
                 "id": 3,
                 "jugadorUno": {
-                    "id": null,
-                    "score": 0
+                    "id": 5,
+                    "score": 3
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 12,
                     "score": 0
                 },
                 "etapa": 1,
@@ -5541,16 +5541,16 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 5
             },
             {
                 "id": 4,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 13,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 4,
                     "score": 0
                 },
                 "etapa": 1,
@@ -5564,11 +5564,11 @@
             {
                 "id": 5,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 3,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 14,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5582,11 +5582,11 @@
             {
                 "id": 6,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 6,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 11,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5600,11 +5600,11 @@
             {
                 "id": 7,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 8,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 10,
                     "score": 0
                 },
                 "etapa": 3,
@@ -5618,11 +5618,11 @@
             {
                 "id": 8,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 15,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 2,
                     "score": 0
                 },
                 "etapa": 4,
@@ -5654,7 +5654,7 @@
             {
                 "id": 10,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 5,
                     "score": 0
                 },
                 "jugadorDos": {
@@ -5781,167 +5781,130 @@
         "teams": [
             {
                 "id": 1,
-                "name": "XEVER \"A\"",
-                "elo": "1938",
-                "players": [
-                    {
-                        "id": 1,
-                        "nick": "NAHUE05",
-                        "elo": "1972",
-                        "semilla": "1"
-                    },
-                    {
-                        "id": 2,
-                        "nick": "PRISMA09",
-                        "elo": "1950",
-                        "semilla": "2"
-                    },
-                    {
-                        "id": 3,
-                        "nick": "RIVUX",
-                        "elo": "1965",
-                        "semilla": "3"
-                    },
-                    {
-                        "id": 4,
-                        "nick": "TATENGUE",
-                        "elo": "1821",
-                        "semilla": "4"
-                    },
-                    {
-                        "id": 5,
-                        "nick": "ESKABE",
-                        "elo": "1866",
-                        "semilla": "5"
-                    },
-                    {
-                        "id": 6,
-                        "nick": "BL4CK",
-                        "elo": null,
-                        "semilla": "COACH"
-                    }
-                ],
-                "logo": "xever.png",
+                "name": "ZZ",
+                "elo": "-",
+                "players": [],
+                "logo": "zz.png",
                 "semilla": 1
             },
             {
                 "id": 2,
-                "name": "ZZ",
-                "elo": "1929",
+                "name": "XEVER \"A\"",
+                "elo": "-",
                 "players": [],
-                "logo": "zz.png",
+                "logo": "xever.png",
                 "semilla": 2
             },
             {
                 "id": 3,
-                "name": "DUMBO",
-                "elo": "1860",
+                "name": "DARKSIDE \"A\"",
+                "elo": "-",
                 "players": [],
-                "logo": "dumbo.png",
+                "logo": "ds.png",
                 "semilla": 3
             },
             {
                 "id": 4,
-                "name": "DARKSIDE \"A\"",
-                "elo": "1829",
+                "name": "DUMBO",
+                "elo": "-",
                 "players": [],
-                "logo": "ds.png",
+                "logo": "dumbo.png",
                 "semilla": 4
             },
             {
                 "id": 5,
                 "name": "XEVER \"AVENGERS\"",
-                "elo": "1756",
+                "elo": "-",
                 "players": [],
                 "logo": "xever.png",
                 "semilla": 5
             },
             {
                 "id": 6,
-                "name": "DGHIR",
-                "elo": "1708",
+                "name": "TM \"A\"",
+                "elo": "-",
                 "players": [],
-                "logo": "dghir.png",
+                "logo": "tm.png",
                 "semilla": 6
             },
             {
                 "id": 7,
-                "name": "DARKSIDE \"B\"",
-                "elo": "1654",
+                "name": "XEVER \"106\"",
+                "elo": "-",
                 "players": [],
-                "logo": "ds.png",
+                "logo": "xever.png",
                 "semilla": 7
             },
             {
                 "id": 8,
-                "name": "XEVER \"106\"",
-                "elo": "1652",
+                "name": "DARKSIDE \"B\"",
+                "elo": "-",
                 "players": [],
-                "logo": "xever.png",
+                "logo": "ds.png",
                 "semilla": 8
             },
             {
                 "id": 9,
-                "name": "TM",
-                "elo": "1632",
+                "name": "SOLIDOS",
+                "elo": "-",
                 "players": [],
-                "logo": "tm.png",
+                "logo": "s2.png",
                 "semilla": 9
             },
             {
                 "id": 10,
-                "name": "SOLIDOS",
-                "elo": "1624",
+                "name": "TM \"B\"",
+                "elo": "-",
                 "players": [],
-                "logo": "s2.png",
+                "logo": "tm.png",
                 "semilla": 10
             },
             {
                 "id": 11,
-                "name": "NEOLIBERALES",
-                "elo": "1572",
+                "name": "DGHIR",
+                "elo": "-",
                 "players": [],
-                "logo": "neo.png",
+                "logo": "dghir.png",
                 "semilla": 11
             },
             {
                 "id": 12,
-                "name": "GOLPE BAJO",
-                "elo": "1562",
+                "name": "NEOLIBERALES",
+                "elo": "-",
                 "players": [],
-                "logo": "golpebajo.png",
+                "logo": "neo.png",
                 "semilla": 12
             },
             {
                 "id": 13,
                 "name": "CORP",
-                "elo": "1534",
+                "elo": "-",
                 "players": [],
                 "logo": "corp.png",
                 "semilla": 13
             },
             {
                 "id": 14,
-                "name": "CLAN ARG \"A\"",
-                "elo": "1528",
+                "name": "A definir",
+                "elo": "-",
                 "players": [],
-                "logo": "arg.png",
+                "logo": "default.png",
                 "semilla": 14
             },
             {
                 "id": 15,
-                "name": "CLAN ARG \"B\"",
-                "elo": "1495",
+                "name": "XEVER \"C\"",
+                "elo": "-",
                 "players": [],
-                "logo": "arg.png",
+                "logo": "xever.png",
                 "semilla": 15
             },
             {
                 "id": 16,
-                "name": "XEVER \"D\"",
-                "elo": "1476",
+                "name": "A definir",
+                "elo": "-",
                 "players": [],
-                "logo": "xever.png",
+                "logo": "default.png",
                 "semilla": 16
             }
         ]

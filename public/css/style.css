@@ -1075,6 +1075,7 @@ body div:where(.swal2-container).swal2-backdrop-show {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 20px !important;
 }
 
 .match > span {
@@ -1520,6 +1521,13 @@ td img {
   position: relative;
   border-radius: 5px;
   width: 13vw;
+  white-space: normal;
+  text-align: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px !important;
+  word-break: break-word;
 }
 
 #brackets ul {
@@ -1843,7 +1851,7 @@ div.calendar-detail ul li {
   }
 
   #brackets .bracket-player {
-    padding: 15px 45px 15px 45px;
+    padding: 15px 38px 15px 38px;
     width: 11vw;
   }
 
@@ -1911,4 +1919,16 @@ div.calendar-detail ul li {
     width: 26vw;
     left: -13vw;
   }
+}
+
+.publi {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #c58669;
+}
+
+.publi a, .publi a:hover, .publi a:focus, .publi a:visited, .publi a:active {
+  color: orange;
 }
