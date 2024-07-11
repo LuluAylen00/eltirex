@@ -4,18 +4,18 @@ const fs = require('fs');
 var ftp = require("ftp");
 
 // Crear un cliente FTP
-var client = new ftp();
+// var client = new ftp();
 
 require('dotenv').config();
 
 // console.log(process.env);
 // Conectarse al servidor FTP
-client.connect({
+/* client.connect({
     host: process.env.FTP_HOST, // El host del servidor FTP
     user: process.env.FTP_USER, // El nombre de usuario del servidor FTP
     password: process.env.FTP_PASSWORD, // La contraseña del servidor FTP
     port: process.env.FTP_PORT,
-});
+}); */
 
 // Exportar el cliente FTP y los métodos para tratar archivos
 module.exports = {
