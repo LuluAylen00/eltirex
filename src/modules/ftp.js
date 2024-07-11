@@ -19,7 +19,7 @@ client.connect({
 
 // Exportar el cliente FTP y los métodos para tratar archivos
 module.exports = {
-    client: client,
+    // client: client,
     readFile: async function readFile(fileName) {
         const filePath = path.join(__dirname, `../data/${fileName}`);
       
@@ -40,12 +40,12 @@ module.exports = {
 
       let uploadFilePath = `/htdocs/eltirex-data.json`;
 
-      client.put(loadFilePath, uploadFilePath, function (err) {
+      /* client.put(loadFilePath, uploadFilePath, function (err) {
           if (err) throw err; 
           console.log("Archivo subido con éxito"); 
           // fs.unlinkSync(file.path)
           return true;
-      });
+      }); */
       return ;
     },
     deleteFile: async function (file) {
