@@ -5492,7 +5492,7 @@
             {
                 "id": 1,
                 "jugadorUno": {
-                    "id": 1,
+                    "id": 2,
                     "score": 0
                 },
                 "jugadorDos": {
@@ -5510,7 +5510,7 @@
             {
                 "id": 2,
                 "jugadorUno": {
-                    "id": 9,
+                    "id": 10,
                     "score": 0
                 },
                 "jugadorDos": {
@@ -5546,12 +5546,12 @@
             {
                 "id": 4,
                 "jugadorUno": {
-                    "id": 13,
+                    "id": 14,
                     "score": 0
                 },
                 "jugadorDos": {
                     "id": 4,
-                    "score": 0
+                    "score": 3
                 },
                 "etapa": 1,
                 "caracteristicas": {
@@ -5559,16 +5559,16 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 4
             },
             {
                 "id": 5,
                 "jugadorUno": {
                     "id": 3,
-                    "score": 0
+                    "score": 3
                 },
                 "jugadorDos": {
-                    "id": 14,
+                    "id": 15,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5577,16 +5577,16 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 3
             },
             {
                 "id": 6,
                 "jugadorUno": {
                     "id": 6,
-                    "score": 0
+                    "score": 3
                 },
                 "jugadorDos": {
-                    "id": 11,
+                    "id": 9,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5595,17 +5595,17 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 6
             },
             {
                 "id": 7,
                 "jugadorUno": {
                     "id": 8,
-                    "score": 0
+                    "score": 3
                 },
                 "jugadorDos": {
-                    "id": 10,
-                    "score": 0
+                    "id": 11,
+                    "score": 1
                 },
                 "etapa": 3,
                 "caracteristicas": {
@@ -5613,16 +5613,16 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 8
             },
             {
                 "id": 8,
                 "jugadorUno": {
-                    "id": 15,
+                    "id": 13,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": 2,
+                    "id": 1,
                     "score": 0
                 },
                 "etapa": 4,
@@ -5658,7 +5658,7 @@
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 4,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5672,11 +5672,11 @@
             {
                 "id": 11,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 3,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 6,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5690,7 +5690,7 @@
             {
                 "id": 12,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 8,
                     "score": 0
                 },
                 "jugadorDos": {
@@ -5781,130 +5781,668 @@
         "teams": [
             {
                 "id": 1,
-                "name": "ZZ",
-                "elo": "-",
-                "players": [],
-                "logo": "zz.png",
+                "name": "XEVER \"A\"",
+                "elo": "1950",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "NAHUE05",
+                        "elo": "1999",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "PRISMA09",
+                        "elo": "1877",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "RIVUX",
+                        "elo": "1974",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "TATENGUE",
+                        "elo": "1755",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "ESKABE",
+                        "elo": "1949",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "BL4CK",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "xever.png",
                 "semilla": 1
             },
             {
                 "id": 2,
-                "name": "XEVER \"A\"",
-                "elo": "-",
-                "players": [],
-                "logo": "xever.png",
+                "name": "ZZ",
+                "elo": "1940",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "FEDEX",
+                        "elo": "2033",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "MONOZ",
+                        "elo": "1828",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "LUCKY",
+                        "elo": "1872",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "LUCHO",
+                        "elo": "2025",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "GARY",
+                        "elo": "1829",
+                        "semilla": "5"
+                    }
+                ],
+                "logo": "zz.png",
                 "semilla": 2
             },
             {
                 "id": 3,
                 "name": "DARKSIDE \"A\"",
-                "elo": "-",
-                "players": [],
+                "elo": "1893",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "VARVARUS",
+                        "elo": "1943",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "BIRY",
+                        "elo": "1902",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "PELA",
+                        "elo": "1885",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "NACHO 10",
+                        "elo": "1840",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "CARBO",
+                        "elo": "1848",
+                        "semilla": "5"
+                    }
+                ],
                 "logo": "ds.png",
                 "semilla": 3
             },
             {
                 "id": 4,
                 "name": "DUMBO",
-                "elo": "-",
-                "players": [],
+                "elo": "1880",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "TOMS",
+                        "elo": "1890",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "KOALA",
+                        "elo": "1904",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "ACERX",
+                        "elo": "1768",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "NAYUTA",
+                        "elo": "1880",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "TOMIAKD",
+                        "elo": "1745",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "SHEPEX",
+                        "elo": "1844",
+                        "semilla": "COACH"
+                    }
+                ],
                 "logo": "dumbo.png",
                 "semilla": 4
             },
             {
                 "id": 5,
                 "name": "XEVER \"AVENGERS\"",
-                "elo": "-",
-                "players": [],
+                "elo": "1758",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "TIGGER KING",
+                        "elo": "1780",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "ASSASSIN OSCURO",
+                        "elo": "1754",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "LANDY",
+                        "elo": "1750",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "CABOBV",
+                        "elo": "1749",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "AGUS CURUZU",
+                        "elo": "1608",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "NAHUE05",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
                 "logo": "xever.png",
                 "semilla": 5
             },
             {
                 "id": 6,
                 "name": "TM \"A\"",
-                "elo": "-",
-                "players": [],
+                "elo": "1746",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "HEISEN",
+                        "elo": "1856",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "CHELO",
+                        "elo": "1627",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "UNO1",
+                        "elo": "1779",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "DEXTER",
+                        "elo": "1720",
+                        "semilla": "4"
+                    }
+                ],
                 "logo": "tm.png",
                 "semilla": 6
             },
             {
                 "id": 7,
                 "name": "XEVER \"106\"",
-                "elo": "-",
-                "players": [],
+                "elo": "1687",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "DARKJOSH89",
+                        "elo": "1701",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "RODRIXXXS",
+                        "elo": "1698",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "RAOFI",
+                        "elo": "1613",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "IDABS",
+                        "elo": "1737",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "MARTYYIN",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
                 "logo": "xever.png",
                 "semilla": 7
             },
             {
                 "id": 8,
                 "name": "DARKSIDE \"B\"",
-                "elo": "-",
-                "players": [],
+                "elo": "1681",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "CHOPI",
+                        "elo": "1875",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "NICODA",
+                        "elo": "1697",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "BORRIDE",
+                        "elo": "1571",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "THE HEARTLESS",
+                        "elo": "1579",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "ERICK307",
+                        "elo": "1522",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "PELA",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
                 "logo": "ds.png",
                 "semilla": 8
             },
             {
                 "id": 9,
-                "name": "SOLIDOS",
-                "elo": "-",
-                "players": [],
-                "logo": "s2.png",
+                "name": "DGHIR",
+                "elo": "1658",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "CHANCHILARU",
+                        "elo": "1713",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "FEYERN",
+                        "elo": "1553",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "YESICO",
+                        "elo": "1655",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "ANAKIN",
+                        "elo": "1636",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "ZARC",
+                        "elo": "1628",
+                        "semilla": "5"
+                    }
+                ],
+                "logo": "dghir.png",
                 "semilla": 9
             },
             {
                 "id": 10,
-                "name": "TM \"B\"",
-                "elo": "-",
-                "players": [],
-                "logo": "tm.png",
+                "name": "SOLIDOS",
+                "elo": "1653",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "VELEZ Y VINO",
+                        "elo": "1648",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "MALTHAEL",
+                        "elo": "1580",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "MIMO",
+                        "elo": "1697",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "BUCHI",
+                        "elo": "1685",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "PUMETA",
+                        "elo": "1289",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "GYNNNNN",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "s2.png",
                 "semilla": 10
             },
             {
                 "id": 11,
-                "name": "DGHIR",
-                "elo": "-",
-                "players": [],
-                "logo": "dghir.png",
+                "name": "TM \"B\"",
+                "elo": "1642",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "PABLOG6",
+                        "elo": "1591",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "KNOLTE",
+                        "elo": "1625",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "EL QUE MANEJA LA COMBI",
+                        "elo": "1655",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "PEKE",
+                        "elo": "1670",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "WEBBER",
+                        "elo": "1616",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "SHARKUSA",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "tm.png",
                 "semilla": 11
             },
             {
                 "id": 12,
                 "name": "NEOLIBERALES",
-                "elo": "-",
-                "players": [],
+                "elo": "1605",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "FIDEL CASTRO",
+                        "elo": "1597",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "CARLOS MENEM",
+                        "elo": "1606",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "NICOLAS DEL CAÑO",
+                        "elo": "1648",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "JAVIER MILEI",
+                        "elo": "1570",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "FLAVIUS BELISARIUS",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
                 "logo": "neo.png",
                 "semilla": 12
             },
             {
                 "id": 13,
-                "name": "CORP",
-                "elo": "-",
-                "players": [],
-                "logo": "corp.png",
+                "name": "XEVER \"C\"",
+                "elo": "1592",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "LOCOSER",
+                        "elo": "1665",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "FALU",
+                        "elo": "1691",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "RORRO PIRRORO",
+                        "elo": "1557",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "BLACKSPOT",
+                        "elo": "1453",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "BALTY",
+                        "elo": "1407",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "LALEX",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "xever.png",
                 "semilla": 13
             },
             {
                 "id": 14,
-                "name": "Golpe Bajo",
-                "elo": "-",
-                "players": [],
-                "logo": "golpebajo.png",
+                "name": "CORP",
+                "elo": "1582",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "THE TIGER",
+                        "elo": "1642",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "WILLIAM DA GAMA",
+                        "elo": "1589",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "MARTHYN",
+                        "elo": "1568",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "KVOTHE",
+                        "elo": "1497",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "ZATA",
+                        "elo": "1527",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "MERCY",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "corp.png",
                 "semilla": 14
             },
             {
                 "id": 15,
-                "name": "XEVER \"C\"",
-                "elo": "-",
-                "players": [],
-                "logo": "xever.png",
+                "name": "GOLPE BAJO",
+                "elo": "Qualy",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "KAMAYUK",
+                        "elo": "1629",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "IXAM",
+                        "elo": "1494",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "DJOE",
+                        "elo": "1453",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "ALMIGHTY",
+                        "elo": "1645",
+                        "semilla": "4"
+                    }
+                ],
+                "logo": "golpebajo.png",
                 "semilla": 15
             },
             {
                 "id": 16,
-                "name": "A definir",
-                "elo": "-",
-                "players": [],
-                "logo": "default.png",
+                "name": "CLAN ARG \"A\"",
+                "elo": "Qualy",
+                "players": [
+                    {
+                        "id": 1,
+                        "nick": "SQUALL",
+                        "elo": "1737",
+                        "semilla": "1"
+                    },
+                    {
+                        "id": 2,
+                        "nick": "ALEJANDRO MAGN00",
+                        "elo": "1452",
+                        "semilla": "2"
+                    },
+                    {
+                        "id": 3,
+                        "nick": "NACHO",
+                        "elo": "1409",
+                        "semilla": "3"
+                    },
+                    {
+                        "id": 4,
+                        "nick": "FUNE",
+                        "elo": "1525",
+                        "semilla": "4"
+                    },
+                    {
+                        "id": 5,
+                        "nick": "VIRUX BOX",
+                        "elo": "1586",
+                        "semilla": "5"
+                    },
+                    {
+                        "id": 6,
+                        "nick": "MINATUS",
+                        "elo": null,
+                        "semilla": "COACH"
+                    }
+                ],
+                "logo": "arg.png",
                 "semilla": 16
             }
         ]

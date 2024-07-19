@@ -1839,6 +1839,7 @@ div.calendar-detail ul li {
   display: flex;
   justify-content: center;
   left: 0;
+  z-index: -1;
 }
 
 .bracket-m16-logo img {
