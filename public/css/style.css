@@ -1471,17 +1471,39 @@ td img {
   height: 100%;
 }
 
-#brackets img.team-logos-brackets {
+/* #brackets img.team-logos-brackets {
   width: 25%;
   position: absolute;
   bottom: 11%;
+} */
+
+#brackets picture.cont-team-logo {
+  width: 25%;
+  position: absolute;
+  bottom: 11%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#brackets .bracket-player.left-match img.team-logos-brackets {
+#brackets img.team-logos-brackets {
+  width: 100%;
+}
+
+/* #brackets .bracket-player.left-match img.team-logos-brackets {
   left: -7%;
 }
 
 #brackets .bracket-player.right-match img.team-logos-brackets {
+  right: -7%;
+} */
+
+#brackets .bracket-player.left-match picture.cont-team-logo {
+  left: -7%;
+}
+
+#brackets .bracket-player.right-match picture.cont-team-logo {
   right: -7%;
 }
 
@@ -1502,6 +1524,14 @@ td img {
   justify-content: space-around;
   padding: 3% 0 1% 0;
   position: relative;
+}
+
+#brackets #player-list.m16-cuartos > div.quarter-left {
+  right: 68px;
+}
+
+#brackets #player-list.m16-cuartos > div.quarter-right {
+  left: 68px;
 }
 
 #brackets .bracket-match {
@@ -1528,6 +1558,11 @@ td img {
   justify-content: center;
   padding-bottom: 25px !important;
   word-break: break-word;
+}
+
+#brackets #player-list.m16-cuartos .bracket-player {
+  width: 15vw;
+  height: 80px;
 }
 
 #brackets ul {
@@ -1573,6 +1608,20 @@ td img {
 
 #brackets ul li i {
   font-size: 20px;
+}
+
+#brackets .m16-semis .bracket-player {
+  height: 110px !important;
+  width: 25vw;
+  font-size: 26px !important;
+}
+
+#brackets .m16-semis div.semi-left .bracket-match, #brackets .m16-semis div.semi-right .bracket-match {
+  height: 58vh !important;
+}
+
+#brackets .m16-cuartos div.semi-left .bracket-match, #brackets .m16-cuartos div.semi-right .bracket-match {
+  height: 50vh !important;
 }
 
 #brackets .bracket-player.left-match {
@@ -1846,6 +1895,10 @@ div.calendar-detail ul li {
   width: 20% !important;
 }
 
+#brackets #player-list.m16-final .final  {
+  width: 100%;
+}
+
 @media (min-width: 1900px) {
   #brackets #player-list {
     padding: 0 6%;
@@ -1856,9 +1909,25 @@ div.calendar-detail ul li {
     width: 11vw;
   }
 
-  #brackets .final .bracket-match {
-    width: 24vw;
-    left: -12vw;
+  #brackets #player-list.m16-final .final .bracket-match .bracket-player {
+    height: 180px;
+    font-size: 42px;
+    width: 43vw;
+  }
+
+  #brackets #player-list.m16-final .final .bracket-match {
+    width: 88vw;
+    left: unset;
+  }
+
+  #brackets #player-list.m16-semis .final .bracket-match {
+    width: 44vw;
+    left: -22vw;
+  }
+
+  #brackets #player-list.m16-cuartos .final .bracket-match {
+      width: 32vw;
+      left: -16vw;
   }
 }
 

@@ -1,41 +1,116 @@
-async function loadBrackets(tipo) {
+async function loadBrackets(tipo, round = "normal") {
     let list = document.querySelector("#player-list");
+    list.innerHTML = "";
+    list.classList.remove("m16-octavos");
+    list.classList.remove("m16-cuartos");
+    list.classList.remove("m16-semis");
+    list.classList.remove("m16-final");
+
+    let nextButton = document.querySelector("#next");
+    if (round != "normal") {
+        nextButton.innerHTML = "Mostrar todo";
+
+        if (round == "normal" || round == "octavos") {
+            list.classList.add("m16-octavos");
+        } else if (round == "cuartos"){
+            list.classList.add("m16-cuartos");
+        } else if (round == "semis"){
+            list.classList.add("m16-semis");
+        } else if (round == "final"){
+            list.classList.add("m16-final");
+        }
+    }
+
+
+
 
     let octLeft = document.createElement("div");
-    octLeft.classList.add("oct-left");
-    list.appendChild(octLeft);
+    if (round == "normal" || round == "octavos") {
+        octLeft.classList.add("oct-left");
+        list.appendChild(octLeft);
 
-    let octLeftTitle = document.createElement("div");
-    octLeftTitle.innerHTML = "Octavos";
-    octLeftTitle.classList.add("instance-titles");
-    octLeft.appendChild(octLeftTitle);
+        
+
+        let octLeftTitle = document.createElement("div");
+        octLeftTitle.innerHTML = "Octavos";
+        octLeftTitle.classList.add("instance-titles");
+
+        octLeftTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando octavos");
+            loadBrackets("master-16", "octavos");
+        })
+
+        octLeft.appendChild(octLeftTitle);
+    }
 
     let quarterLeft = document.createElement("div");
-    quarterLeft.classList.add("quarter-left");
-    list.appendChild(quarterLeft);
+    if (round == "normal" || round == "octavos" || round == "cuartos") {
+        quarterLeft.classList.add("quarter-left");
+        list.appendChild(quarterLeft);
 
-    let quarterLeftTitle = document.createElement("div");
-    quarterLeftTitle.innerHTML = "Cuartos";
-    quarterLeftTitle.classList.add("instance-titles");
-    quarterLeft.appendChild(quarterLeftTitle);
+        
+    
+        let quarterLeftTitle = document.createElement("div");
+        quarterLeftTitle.innerHTML = "Cuartos";
+        quarterLeftTitle.classList.add("instance-titles");
+
+        quarterLeftTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando cuartos");
+            loadBrackets("master-16", "cuartos");
+        })
+
+        quarterLeft.appendChild(quarterLeftTitle);
+    }
 
     let semiLeft = document.createElement("div");
-    semiLeft.classList.add("semi-left");
-    list.appendChild(semiLeft);
+    if (round == "normal" || round == "octavos" || round == "cuartos" || round == "semis") {
+        semiLeft.classList.add("semi-left");
+        list.appendChild(semiLeft);
 
-    let semiLeftTitle = document.createElement("div");
-    semiLeftTitle.innerHTML = "Semis";
-    semiLeftTitle.classList.add("instance-titles");
-    semiLeft.appendChild(semiLeftTitle);
+        
+    
+        let semiLeftTitle = document.createElement("div");
+        semiLeftTitle.innerHTML = "Semis";
+        semiLeftTitle.classList.add("instance-titles");
+
+        semiLeftTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando semis");
+            loadBrackets("master-16", "semis");
+        })
+
+        semiLeft.appendChild(semiLeftTitle);
+    }
 
     let final = document.createElement("div");
-    final.classList.add("final");
-    list.appendChild(final);
+    if (round == "normal" || round == "octavos" || round == "cuartos" || round == "semis" || round == "final") {
+        final.classList.add("final");
+        list.appendChild(final);
 
-    let finalTitle = document.createElement("div");
-    finalTitle.innerHTML = "Final";
-    finalTitle.classList.add("instance-titles");
-    final.appendChild(finalTitle);
+        
+    
+        let finalTitle = document.createElement("div");
+        finalTitle.innerHTML = "Final";
+        finalTitle.classList.add("instance-titles");
+
+        finalTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando final");
+            loadBrackets("master-16", "final");
+        })
+
+        final.appendChild(finalTitle);
+    }
+
+    let imgBrackets = document.querySelector("#m16-brackets");
+    if (round == "normal" || round == "octavos") {
+        imgBrackets.setAttribute("src","/img/brackets-tirex2.png");
+    } else if (round == "cuartos") {
+        imgBrackets.setAttribute("src","/img/brackets-tirex2-cuartos.png");
+    } else if (round == "semis") {
+        imgBrackets.setAttribute("src","/img/brackets-tirex2-semis.png");
+    } else if (round == "final") {
+        imgBrackets.setAttribute("src","/img/brackets-tirex2-final.png");
+    }
+
 
     let imgPictureLogo = document.createElement("picture");
     imgPictureLogo.classList.add("bracket-m16-logo");
@@ -48,31 +123,55 @@ async function loadBrackets(tipo) {
     list.appendChild(imgPictureLogo);
 
     let semiRight = document.createElement("div");
-    semiRight.classList.add("semi-right");
-    list.appendChild(semiRight);
+    if (round == "normal" || round == "octavos" || round == "cuartos" || round == "semis") {
+        semiRight.classList.add("semi-right");
+        list.appendChild(semiRight);
 
-    let semiRightTitle = document.createElement("div");
-    semiRightTitle.innerHTML = "Semis";
-    semiRightTitle.classList.add("instance-titles");
-    semiRight.appendChild(semiRightTitle);
+        let semiRightTitle = document.createElement("div");
+        semiRightTitle.innerHTML = "Semis";
+        semiRightTitle.classList.add("instance-titles");
+
+        semiRightTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando semis");
+            loadBrackets("master-16", "semis");
+        })
+
+        semiRight.appendChild(semiRightTitle);
+    }
 
     let quarterRight = document.createElement("div");
-    quarterRight.classList.add("quarter-right");
-    list.appendChild(quarterRight);
+    if (round == "normal" || round == "octavos" || round == "cuartos") {
+        quarterRight.classList.add("quarter-right");
+        list.appendChild(quarterRight);
 
-    let quarterRightTitle = document.createElement("div");
-    quarterRightTitle.innerHTML = "Cuartos";
-    quarterRightTitle.classList.add("instance-titles");
-    quarterRight.appendChild(quarterRightTitle);
+        let quarterRightTitle = document.createElement("div");
+        quarterRightTitle.innerHTML = "Cuartos";
+        quarterRightTitle.classList.add("instance-titles");
+
+        quarterRightTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando cuartos");
+            loadBrackets("master-16", "cuartos");
+        })
+
+        quarterRight.appendChild(quarterRightTitle);
+    }
 
     let octRight = document.createElement("div");
-    octRight.classList.add("oct-right");
-    list.appendChild(octRight);
+    if (round == "normal" || round == "octavos") {
+        octRight.classList.add("oct-right");
+        list.appendChild(octRight);
+    
+        let octRightTitle = document.createElement("div");
+        octRightTitle.innerHTML = "Octavos";
+        octRightTitle.classList.add("instance-titles");
 
-    let octRightTitle = document.createElement("div");
-    octRightTitle.innerHTML = "Octavos";
-    octRightTitle.classList.add("instance-titles");
-    octRight.appendChild(octRightTitle);
+        octRightTitle.addEventListener("dblclick",()=>{
+            console.log("visualizando octavos");
+            loadBrackets("master-16", "octavos");
+        })
+
+        octRight.appendChild(octRightTitle);
+    }
 
     // console.log(tipo);
 
@@ -106,10 +205,15 @@ async function loadBrackets(tipo) {
         span1.innerHTML = buscarJugador(torneo.players || torneo.teams, match.jugadorUno.id) ? buscarJugador(torneo.players || torneo.teams, match.jugadorUno.id).nick || buscarJugador(torneo.players || torneo.teams, match.jugadorUno.id).name : "A DEFINIR";
 
         if (tipo == "master-16" && match.jugadorUno.id) {
+            let picture = document.createElement("picture");
+            picture.classList.add("cont-team-logo");
+
             let logo1 = document.createElement("img");
             logo1.src = "/img/logos/" + (buscarJugador(torneo.teams, match.jugadorUno.id).logo !== null ? buscarJugador(torneo.teams, match.jugadorUno.id).logo : "default.png");
             logo1.classList.add("team-logos-brackets");
-            span1.appendChild(logo1);
+            picture.appendChild(logo1);
+
+            span1.appendChild(picture);
         }
         // buscarJugador(torneo.teams, buscarPartida(torneo.matches, 1).jugadorUno.id).name : 1}${buscarPartida(torneo.matches, 1).jugadorUno.id ?  :  ""}
 
@@ -125,10 +229,15 @@ async function loadBrackets(tipo) {
         span2.innerHTML = buscarJugador(torneo.players || torneo.teams, match.jugadorDos.id) ? buscarJugador(torneo.players || torneo.teams, match.jugadorDos.id).nick || buscarJugador(torneo.players || torneo.teams, match.jugadorDos.id).name : "A DEFINIR";
 
         if (tipo == "master-16" && match.jugadorDos.id) {
+            let picture = document.createElement("picture");
+            picture.classList.add("cont-team-logo");
+
             let logo2 = document.createElement("img");
             logo2.src = "/img/logos/" + (buscarJugador(torneo.teams, match.jugadorDos.id).logo !== null ? buscarJugador(torneo.teams, match.jugadorDos.id).logo : "default.png");
             logo2.classList.add("team-logos-brackets");
-            span2.appendChild(logo2);
+            picture.appendChild(logo2);
+
+            span2.appendChild(picture)
         }
 
         let span2Result = document.createElement("span");
@@ -1124,7 +1233,7 @@ async function mostrarContenido(ruta) {
             
             contenido = `
                 <div id="brackets">
-                    <img src="/img/brackets-tirex2.png">
+                    <img id="m16-brackets" src="/img/brackets-tirex2.png">
                     <div id="player-list">
                     </div>
                     <!-- <a id="edit-bracket" href="/master-16"><i class="fa-solid fa-pen"></i></a> -->

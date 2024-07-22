@@ -5493,7 +5493,7 @@
                 "id": 1,
                 "jugadorUno": {
                     "id": 2,
-                    "score": 0
+                    "score": 3
                 },
                 "jugadorDos": {
                     "id": 16,
@@ -5505,7 +5505,7 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 2
             },
             {
                 "id": 2,
@@ -5515,7 +5515,7 @@
                 },
                 "jugadorDos": {
                     "id": 7,
-                    "score": 0
+                    "score": 3
                 },
                 "etapa": 1,
                 "caracteristicas": {
@@ -5523,7 +5523,7 @@
                     "map_draft": null,
                     "horario": null
                 },
-                "ganador": null
+                "ganador": 7
             },
             {
                 "id": 3,
@@ -5636,11 +5636,11 @@
             {
                 "id": 9,
                 "jugadorUno": {
-                    "id": null,
+                    "id": 2,
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
+                    "id": 7,
                     "score": 0
                 },
                 "etapa": 2,
@@ -5694,7 +5694,6 @@
                     "score": 0
                 },
                 "jugadorDos": {
-                    "id": null,
                     "score": 0
                 },
                 "etapa": 2,
