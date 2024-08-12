@@ -52,12 +52,139 @@ body {
 }
 
 .modified-background.doce-casas {
+  /* background-image: url(../img/this/fondo-12casas.png); */
+  background-image: url(../img/this/fondos12casas/fondooscuro.png);
+}
+
+.modified-background.doce-casas-simple {
   background-image: url(../img/this/fondo-12casas.png);
+  /* background-image: url(../img/santuarios-12casas.png); */
+}
+
+.contenedor-de-logos-12-casas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dc-cont-tirri {
+  position: absolute;
+  bottom: 24px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.dc-cont-tirri img {
+  width: 150px;
+}
+
+.dc-cont-docecasas {
+  position: absolute;
+  top: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.dc-cont-docecasas img {
+  width: 400px;
+  position: relative;
+  left: 346px;
+}
+
+.wh100v {
+  width: 100vw;
+  height: 100vh;
+}
+
+.docecasas-fondo-final1 {
+  background-image: url(../img/this/fondos12casas/santuarios-final.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -8;
 }
 
 
 .modified-background.active {
   opacity: 1;
+}
+
+#doce-casas-lista > div.tabla-dentro{
+  background-image: url("../img/this/fondos12casas/tabla2.png");
+  width: 35vw;
+  position: relative;
+  height: 85vh;
+  background-size: cover;
+  left: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 65% 76%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0px 0px 50px #4c4782);
+}
+#doce-casas-lista  h3 {
+  position: absolute;
+  top: 0;
+  font-family: 'machine-std';
+  color: #e0aa36;
+  font-size: 40px;
+}
+#doce-casas-lista div.dc-espacio-usable{
+  width: 56%;
+  height: 61%;
+  position: relative;
+  overflow-y: auto;
+}
+
+#doce-casas-lista div.dc-espacio-usable h4{
+  font-family: 'machine-std';
+  text-align: center;
+  font-size: 36px;
+  color: #efb956;
+  position: sticky;
+  background-color: black;
+  top: 0;
+  width: 100%;
+  background-size: 100%;
+  z-index: 2;
+}
+
+#doce-casas-lista div.dc-espacio-usable ul{
+  font-family: 'machine-std';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+#doce-casas-lista div.dc-espacio-usable li{
+  /* font-family: 'machine-std'; */
+  list-style-type: none;
+  background-image: url(../img/this/fondos12casas/entrada-tabla.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 80%;
+  padding: 6px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+}
+
+#doce-casas-lista div.dc-espacio-usable li span.lugar{
+  position: absolute;
+  left: 26px;
+  font-size: 20px;
+  top: 4px;
+}
+
+#doce-casas-lista div.dc-espacio-usable li span.puntos{
+  position: absolute;
+  right: 26px;
+  font-size: 26px;
+  top: 0px;
 }
 
 
@@ -163,12 +290,143 @@ div#logos > a > * {
   width: 100%;
 }
 
-.circle-container {
+/* .circle-container {
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: row;
   width: 100%;
+} */
+
+#doce-casas-general {
+  display: flex;
+}
+
+#doce-casas-lista {
+  width: 40vw;
+}
+
+#torneos-12casas {
+  width: 60vw;
+  position: relative;
+}
+
+.torneo-tarjeta {
+  display: flex;
+  width: 324px;
+  position: absolute;
+}
+
+.casa-de-aries {
+  bottom: 10vh;
+  right: 8vw;
+  z-index: 20;
+}
+span.span-tarjeta {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+span.cont-relativo {
+  position: relative;
+}
+.casa-de-tauro {
+  bottom: 14vh;
+  right: 22.5vw;
+  width: 260px;
+  z-index: 19;
+}
+.casa-de-geminis {
+  bottom: 20vh;
+  right: 35.5vw;
+  width: 176px;
+  z-index: 18;
+}
+.casa-de-cancer {
+  bottom: 25vh;
+  right: 43.5vw;
+  width: 168px;
+  z-index: 17;
+}
+.casa-de-leo {
+  bottom: 32vh;
+  right: 37vw;
+  width: 162px;
+  z-index: 16;
+}
+.casa-de-virgo {
+  bottom: 32vh;
+  right: 28.5vw;
+  width: 192px;
+  z-index: 15;
+}
+.casa-de-libra {
+  bottom: 38vh;
+  right: 24vw;
+  width: 139px;
+  z-index: 14;
+}
+.casa-de-escorpio {
+  bottom: 41vh;
+  right: 18vw;
+  width: 170px;
+  z-index: 13;
+}
+.casa-de-sagitario {
+  bottom: 42.5vh;
+  right: 9vw;
+  width: 204px;
+  z-index: 12;
+}
+.casa-de-capricornio {
+  bottom: 52vh;
+  right: 13vw;
+  width: 275px;
+  z-index: 11;
+}
+.casa-de-acuario {
+  bottom: 54.5vh;
+  right: 22vw;
+  width: 266px;
+  z-index: 10;
+}
+.casa-de-piscis {
+  bottom: 57vh;
+  right: 29.5vw;
+  width: 205px;
+  z-index: 9;
+}
+.casa-general {
+  bottom: 58.5vh;
+  right: 39.7vw;
+  width: 274px;
+  z-index: 8;
+}
+
+.torneo-tarjeta img {
+  width: 100%;
+  filter: drop-shadow(0px 0px 10px #E0AA36);
+  transition: all 0.5s;
+}
+.torneo-tarjeta.casa-status0 img {
+  filter: drop-shadow(0px 0px 6px #edc56e) brightness(0.8);
+}
+.torneo-tarjeta.casa-status1 img {
+  filter: drop-shadow(0px 0px 20px #E0AA36);
+}
+.torneo-tarjeta.casa-status2 img {
+  filter: drop-shadow(0px 0px 4px #8c7f62) sepia(1) blur(0.7px) brightness(0.5);
+  cursor: default;
+}
+
+.torneo-tarjeta img:hover {
+  filter: drop-shadow(0px 0px 16px rgba(21,58,218,255));
+}
+.torneo-tarjeta.casa-status0 img:hover {
+  filter: drop-shadow(0px 0px 16px #edc56e) brightness(0.8);
+}
+.torneo-tarjeta.casa-status2 img:hover {
+  filter: drop-shadow(0px 0px 4px #8c7f62) sepia(1) blur(0.7px) brightness(0.8);
 }
 
 :root {
@@ -228,7 +486,7 @@ div#logos > a > * {
 .main-link-12-casas {
   position: absolute;
   left: 10vw;
-  /* cursor: pointer; */
+  cursor: default;
 }
 
 .main-link-master-16 {
@@ -261,7 +519,7 @@ div#seed-table {
 div#left-bar {
   width: 35vw;
   height: 95%;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   overflow-x: visible;
   margin: 1%;
   /* background-image: url(/img/this/fondo-master-16-tabla.png); */
@@ -523,6 +781,20 @@ body .btn-success:hover {
   width: 100%;
   text-align: center;
   z-index: -1;
+}
+
+.doce-casas-map-logo {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  z-index: -1;
+}
+.doce-casas-map-logo img {
+  width: 24%;
+  position: relative;
+  right: 17px;
+  filter: drop-shadow(2px 4px 6px silver);
 }
 
 .doce-casas-bracket-logo img {
@@ -857,17 +1129,55 @@ div#left-bar .table .thead-dark th span {
   color: #ffcf61;
 }
 
+.left-bar-rest > div.resultados {
+  width: 98%;
+  height: 30%;
+  display: flex;
+  position: absolute;
+  bottom: 12vh;
+  left: -7px;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+.left-bar-rest > div.resultados > div{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-bar-rest div.resultados span{
+  position: relative;
+  filter: drop-shadow(2px 2px 2px silver);
+  text-shadow: 1px 1px 3px #007bff;
+  background-size: 100% 100%;
+  color: black;
+  padding: 10px 60px;
+  font-size: 16px;
+  width: 90%;
+  text-align: center;
+}
+
+.left-bar-rest div.resultados-left span{
+  background-image: url(/img/this/fondo-12casas-bracket-izquierda.png) !important;
+}
+.left-bar-rest div.resultados-right span{
+  background-image: url(/img/this/fondo-12casas-bracket-derecha.png) !important;
+}
+
 .left-bar-rest h3 {
   font-size: 70px;
   margin-right: 20px;
   word-wrap: break-word;
   text-align: center;
+  bottom: 40px;
 }
 
 .left-bar-rest picture {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   text-align: center;
 }
 
@@ -1102,6 +1412,7 @@ body div:where(.swal2-container).swal2-backdrop-show {
   background-image: url('/img/this/fondo-12casas-bracket-izquierda.png') !important;
   padding-left: 25px;
   position: relative;
+  filter: drop-shadow(2px 4px 6px silver);
 }
 
 #left-brackets .match > span img {
@@ -1121,6 +1432,7 @@ body div:where(.swal2-container).swal2-backdrop-show {
   background-image: url('/img/this/fondo-12casas-bracket-derecha.png');
   padding-right: 25px;
   position: relative;
+  filter: drop-shadow(2px 4px 6px silver);
 }
 
 #right-brackets .match > span img {
@@ -1686,6 +1998,10 @@ td img {
   z-index: 2;
 }
 
+#brackets .final .bracket-match.match-14{
+  z-index: 10;
+}
+
 #brackets .modify-score {
   position: absolute;
   display: flex;
@@ -1897,6 +2213,11 @@ div.calendar-detail ul li {
 
 #brackets #player-list.m16-final .final  {
   width: 100%;
+}
+
+#doce-casas-tabla {
+  position: absolute;
+  left: 0;
 }
 
 @media (min-width: 1900px) {

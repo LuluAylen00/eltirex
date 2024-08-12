@@ -23,6 +23,37 @@ function buscarTorneo(tipo) {
     return torneo;
 }
 
+async function establecerCasaActiva(idCasa, data) {
+    let dataActual = data;
+    let casasActuales = data["12-casas"];
+    Object.values(casasActuales).forEach((casa, i) => {
+        if (casa.id < idCasa) {
+            casasActuales[Object.keys(casasActuales)[i]].status = 0;
+        }
+        else if (casa.id == idCasa) {
+            casasActuales[Object.keys(casasActuales)[i]].status = 1;
+        }
+        else if (casa.id > idCasa) {
+            casasActuales[Object.keys(casasActuales)[i]].status = 2;
+        }
+    })
+    console.log(casasActuales);
+    dataActual["12-casas"] = casasActuales;
+    socket.emit("new-content", dataActual);
+
+    sessionStorage.setItem("data",JSON.stringify(dataActual));
+
+    // cargarDoceCasas();
+
+    await fetch('/api/update-match-info',{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({data: JSON.stringify(dataActual)})
+    })
+}
+
 async function actualizarListaJugadores(jugadores, torneo) {
     let dataActual = JSON.parse(sessionStorage.getItem("data"));
     
@@ -138,6 +169,52 @@ async function asignarJugador(jugador, slot, partida, torneo) {
     cargarTorneo(dataActual, window.location.pathname);
 
     // sessionStorage.setItem("partidas", data.partidas);
+    socket.emit("new-content", dataActual);
+
+    await fetch('/api/update-match-info',{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({data: JSON.stringify(dataActual)})
+    })
+}
+
+async function definirJugador(jugador, slot, torneo) {
+    // console.log(jugador, slot, partida);
+    let dataActual = JSON.parse(sessionStorage.getItem("data"));
+    
+    let playerList = JSON.parse(sessionStorage.getItem("jugadores"));
+    // let brackets = JSON.parse(sessionStorage.getItem("partidas"));
+
+    console.log(jugador, slot, torneo);
+    /*
+        fase-final
+        fase-semis
+        fase-cuartos
+        fase-octavos
+        primer-top
+        segundo-top
+        tercero-top
+        cuarto-top
+    */
+   if (slot.includes("top-")) {
+    dataActual["12-casas"][torneo]["prizepool"][slot.replace("top-","")].player = playerList.find(j => j.id == jugador) ? playerList.find(j => j.id == jugador).nick : null;
+    console.log(dataActual);
+   } else if (slot.includes("fase-")){
+    dataActual["12-casas"][torneo]["vencido"][slot.replace("fase-","")] = playerList.find(j => j.id == jugador) ? playerList.find(j => j.id == jugador).nick : null;
+    console.log(dataActual);
+   }
+
+    sessionStorage.setItem("torneo", JSON.stringify(dataActual["12-casas"][torneo]));
+    
+    sessionStorage.setItem("data", JSON.stringify(dataActual));
+    sessionStorage.setItem("jugadores", JSON.stringify(dataActual.jugadores));
+    sessionStorage.setItem("partidas", JSON.stringify(dataActual.partidas));
+    // // console.log(data);
+    cargarTorneo(dataActual, window.location.pathname);
+
+    // // sessionStorage.setItem("partidas", data.partidas);
     socket.emit("new-content", dataActual);
 
     await fetch('/api/update-match-info',{

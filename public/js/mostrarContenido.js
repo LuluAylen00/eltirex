@@ -865,6 +865,79 @@ async function loadBrackets(tipo, round = "normal") {
     })
 }
 
+async function cargarDoceCasas() {
+    let torneos = JSON.parse(sessionStorage.getItem("data"));
+    let torneo = {};
+    torneo = torneos["12-casas"];
+    console.log(torneo);
+    let scores = [];
+    Object.values(torneo).forEach((minitorneo) => {
+        // console.log("Pasando por "+minitorneo.name);
+        
+        Object.values(minitorneo.prizepool).forEach(prize => {
+            // if (prize.player) {
+            //     console.log("Tenemos un ganador");
+            // } else {
+            //     console.log("Nada");
+            // }
+            
+            // scores.forEach((score) => {
+                
+            // })
+            if (prize.player) {
+                if (scores.find(scorer => scorer.nick.toLowerCase().replaceAll(" ","") == prize.player.toLowerCase().replaceAll(" ",""))) {
+                    scores = scores.map(scorer =>{
+                        if (scorer.nick == prize.player) {
+                            scorer.points += parseInt(prize.points);
+                        } 
+                        return scorer;
+                    })
+                } else {
+                    scores.push({
+                        nick: prize.player,
+                        points: parseInt(prize.points)
+                    });
+                }
+            }
+        })
+    })
+    scores.sort(function(a, b) {
+        return b.points - a.points;
+    })
+
+    let tabla = document.querySelector(".dc-espacio-usable ul");
+    // console.log(scores);
+    scores.forEach((score,i) => {
+        tabla.innerHTML += `<li><span class="lugar">${i+1}°</span>${score.nick}<span class="puntos">${score.points}</span></li>`;
+    })
+    
+    let enlaces = document.querySelectorAll(".torneo-tarjeta");
+    enlaces.forEach((enlace) => {
+        enlace.classList.remove("casa-status0");
+        enlace.classList.remove("casa-status1");
+        enlace.classList.remove("casa-status2");
+        if(torneo[enlace.dataset.name]){
+            enlace.classList.add(`casa-status${torneo[enlace.dataset.name].status}`);
+            if (torneo[enlace.dataset.name].status == 2) {
+                enlace.setAttribute("href","#");
+            }
+        } else {
+            enlace.classList.add("casa-status2");
+        }
+
+        if (verifyAdmin()) {
+            enlace.addEventListener("contextmenu",(e) => {
+                // console.log(enlace.dataset.name);
+                let torneoSeleccionado = torneo[enlace.dataset.name];
+                if (torneoSeleccionado) {
+                    establecerCasaActiva(torneoSeleccionado.id, torneos);
+                    mostrarContenido('/12-casas');
+                }
+            })
+        }
+    })
+}
+
 async function mostrarContenido(ruta) {    
     let mainLogo = document.querySelector("#main-logo");
     mainLogo.style.opacity = 1;
@@ -887,6 +960,8 @@ async function mostrarContenido(ruta) {
             modifiedBackground.classList.remove("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.classList.remove("doce-casas-simple");
+            modifiedBackground.innerHTML = "";
             header.classList.remove("master-16");
             header.classList.remove("doce-casas");
             
@@ -917,7 +992,9 @@ async function mostrarContenido(ruta) {
             enlace12Casas.classList.add("main-link-12-casas");
             enlace12Casas.classList.add("main-link-a");
             enlace12Casas.setAttribute("title", "Proximamente...");
-            // enlace12Casas.setAttribute("href", "/12-casas");
+            if (verifyAdmin()) {
+                enlace12Casas.setAttribute("href", "/12-casas");
+            }
             
             let logo12Casas = document.createElement("img");
             logo12Casas.classList.add("homepage-nav-logo");
@@ -974,6 +1051,8 @@ async function mostrarContenido(ruta) {
             header.classList.add("master-16");
             modifiedBackground.classList.add("master-16");
             modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.classList.remove("doce-casas-simple");
+            modifiedBackground.innerHTML = "";
             mainLogo.style.opacity = 1;
             let tipo = "master-16";
     
@@ -1223,6 +1302,8 @@ async function mostrarContenido(ruta) {
             modifiedBackground.classList.add("active");
             modifiedBackground.classList.add("master-16");
             modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.classList.remove("doce-casas-simple");
+            modifiedBackground.innerHTML = "";
             mainLogo.style.opacity = 1;
 
             backButton.innerHTML = "< Volver";
@@ -1251,6 +1332,8 @@ async function mostrarContenido(ruta) {
             modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
+            modifiedBackground.classList.remove("doce-casas-simple");
+            modifiedBackground.innerHTML = "";
 
             backButton.innerHTML = "< Volver";
             backButton.setAttribute("href","/");
@@ -1258,33 +1341,102 @@ async function mostrarContenido(ruta) {
             nextButton.innerHTML = "";
             nextButton.setAttribute("href","/12-casas");
 
+            let torneos = JSON.parse(sessionStorage.getItem("data"));
+            let torneo = {};
+            torneo = torneos["12-casas"];
+            // console.log(torneo);
+            
+
             contenido = `
-            <div class='circle-container'>
-                <a href='/12-casas/leo' class='deg0'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/piscis' class='deg30'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/capricornio' class='deg60'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/cancer' class='deg90'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/virgo' class='deg120'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/acuario' class='deg150'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/tauro' class='deg180'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/geminis' class='deg210'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/libra' class='deg240'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/aries' class='deg270'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/escorpio' class='deg300'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/sagitario' class='deg330'><img src='/img/this/12-casas-final.png'></a>
-                <a href='/12-casas/tabla' class=''><img src='/img/this/12-casas-final.png'></a>
+            <div id="doce-casas-general">
+                <div id="doce-casas-lista">
+                    <div class="tabla-dentro">
+                        <h3>Casa actual</h3>
+                        <div class="dc-espacio-usable">
+                            <h4>Tabla general</h4>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="torneos-12casas">
+                    <a href='/12-casas/aries' class='casa-de-aries torneo-tarjeta' data-name="aries"><img src='/img/this/fondos12casas/aries.png'></a>
+                    <a href='/12-casas/tauro' class='casa-de-tauro torneo-tarjeta' data-name="tauro"><img src='/img/this/fondos12casas/tauro.png'></a>
+                    <a href='/12-casas/geminis' class='casa-de-geminis torneo-tarjeta' data-name="geminis"><img src='/img/this/fondos12casas/geminis.png'></a>
+                    <a href='/12-casas/cancer' class='casa-de-cancer torneo-tarjeta' data-name="cancer"><img src='/img/this/fondos12casas/cancer.png'></a>
+                    <a href='/12-casas/leo' class='casa-de-leo torneo-tarjeta' data-name="leo"><img src='/img/this/fondos12casas/leo.png'></a>
+                    <a href='/12-casas/virgo' class='casa-de-virgo torneo-tarjeta' data-name="virgo"><img src='/img/this/fondos12casas/virgo.png'></a>
+                    <a href='/12-casas/libra' class='casa-de-libra torneo-tarjeta' data-name="libra"><img src='/img/this/fondos12casas/libra.png'></a>
+                    <a href='/12-casas/escorpio' class='casa-de-escorpio torneo-tarjeta' data-name="escorpio"><img src='/img/this/fondos12casas/escorpio.png'></a>
+                    <a href='/12-casas/sagitario' class='casa-de-sagitario torneo-tarjeta' data-name="sagitario"><img src='/img/this/fondos12casas/sagitario.png'></a>
+                    <a href='/12-casas/capricornio' class='casa-de-capricornio torneo-tarjeta' data-name="capricornio"><img src='/img/this/fondos12casas/capricornio.png'></a>
+                    <a href='/12-casas/acuario' class='casa-de-acuario torneo-tarjeta' data-name="acuario"><img src='/img/this/fondos12casas/acuario.png'></a>
+                    <a href='/12-casas/piscis' class='casa-de-piscis torneo-tarjeta' data-name="piscis"><img src='/img/this/fondos12casas/piscis.png'></a>
+                    <a href='#' class='casa-general torneo-tarjeta casa-status2'><img src='/img/this/fondos12casas/final.png'></a>
+                </div>
             </div>
             `;
             mainLogo.style.opacity = 1;
             document.getElementById("main-cont").innerHTML = contenido;
+            cargarDoceCasas();
+
+
+            // console.log("Viendo fondo");
+            // <div class="fondo-12casas-nuevo"></div>
+
+            let fondo = document.createElement("div");
+            fondo.classList.add("fondo-12casas-nuevo");
+            
+
+            let fondo1 = document.createElement("div");
+            fondo1.classList.add("docecasas-fondo-final1");
+            fondo1.classList.add("wh100v");
+            fondo.appendChild(fondo1);
+
+            let fondo2 = document.createElement("div");
+            fondo2.classList.add("docecasas-fondo-final2");
+            fondo2.classList.add("wh100v");
+            fondo.appendChild(fondo2);
+
+            let contenedorDeLogos = document.createElement("div");
+            contenedorDeLogos.classList.add("contenedor-de-logos-12-casas");
+            contenedorDeLogos.classList.add("wh100v");
+            fondo.appendChild(contenedorDeLogos);
+            {
+                let tirriCont = document.createElement("div");
+                tirriCont.classList.add("dc-cont-tirri");
+
+                let logoTirri = document.createElement("img");
+                logoTirri.src = "/img/this/ti-rex-final.png";
+                logoTirri.classList.add("logo-12casas-final-tirri");
+
+                tirriCont.appendChild(logoTirri);
+                contenedorDeLogos.appendChild(tirriCont);
+
+                let docecasasCont = document.createElement("div");
+                docecasasCont.classList.add("dc-cont-docecasas");
+
+                let logoDoceCasas = document.createElement("img");
+                logoDoceCasas.src = "/img/this/12casas-final.png";
+                logoDoceCasas.classList.add("logo-12casas-final");
+
+                docecasasCont.appendChild(logoDoceCasas);
+                contenedorDeLogos.appendChild(docecasasCont);
+            }
+            fondo.appendChild(contenedorDeLogos);
+            
+            modifiedBackground.appendChild(fondo);
+
             actualizarLinks();
             break;
         case "/12-casas/acuario":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
-            modifiedBackground.classList.add("doce-casas");
             modifiedBackground.classList.add("acuario");
             mainLogo.style.opacity = 1;
             
@@ -1321,17 +1473,45 @@ async function mostrarContenido(ruta) {
             let torneo = buscarTorneo(tipo);
 
             let campeon;
-
+            console.log(torneo);
+            
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                 <table id="seed-table" class="table table-striped"></table>
@@ -1358,6 +1538,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -1473,9 +1656,15 @@ async function mostrarContenido(ruta) {
 
             loadLeftBar(torneo.players);
 
+
+
             if (verifyAdmin()) {
                 let loadPlayers = document.querySelector("#seed-table-header");
+                // console.log(loadPlayers);
+                
                 loadPlayers.addEventListener("dblclick", () => {
+                    // console.log("Modificando..");
+                    
                     let loadPlayersDiv = document.createElement("div");
                     loadPlayersDiv.classList.add("load-players")
 
@@ -1520,6 +1709,116 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
+
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
                 
             }
             actualizarLinks();
@@ -1529,6 +1828,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/aries":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -1571,14 +1873,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -1605,6 +1934,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -1767,7 +2099,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -1776,6 +2216,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/cancer":{
             // console.log("12 Casas - cancer");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -1818,14 +2261,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -1852,6 +2322,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -2014,7 +2487,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -2023,6 +2604,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/capricornio":{
             // console.log("12 Casas - capricornio");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -2065,14 +2649,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -2099,6 +2710,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -2261,7 +2875,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -2270,6 +2992,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/escorpio":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -2312,14 +3037,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -2346,6 +3098,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -2508,7 +3263,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -2517,6 +3380,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/geminis":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -2559,14 +3425,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -2593,6 +3486,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -2755,7 +3651,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -2764,6 +3768,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/leo":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -2806,14 +3813,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -2840,6 +3874,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -3002,7 +4039,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -3011,6 +4156,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/libra":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -3053,14 +4201,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -3087,6 +4262,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -3249,7 +4427,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -3258,6 +4544,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/piscis":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -3300,14 +4589,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -3334,6 +4650,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -3496,7 +4815,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -3505,6 +4932,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/sagitario":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -3547,14 +4977,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -3581,6 +5038,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -3743,7 +5203,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -3752,6 +5320,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/tauro":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -3794,14 +5365,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -3828,6 +5426,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -3990,7 +5591,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -3999,6 +5708,9 @@ async function mostrarContenido(ruta) {
         case "/12-casas/virgo":{
             // console.log("12 Casas - Leo");
             header.classList.add("doce-casas");
+            modifiedBackground.classList.add("doce-casas-simple");
+            modifiedBackground.classList.remove("doce-casas");
+            modifiedBackground.innerHTML = "";
             /* modifiedBackground.classList.add("active");
             modifiedBackground.classList.remove("master-16");
             modifiedBackground.classList.add("doce-casas");
@@ -4041,14 +5753,41 @@ async function mostrarContenido(ruta) {
 
             if (torneo.matches[torneo.matches.length - 1].ganador) {
                 campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            } else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+                campeon = torneo.prizepool["1"].player;
             };
             contenido = `
             <div id="left-bar" class="doce-casas table-cont">
                 <h3 id="seed-table-header">Clasificacion</h3>
                 <div class="left-bar-rest">
                         <h3>${campeon || "A definir"}</h3>
+                        <div class="resultados">
+                            
+                            ${
+                                campeon 
+                                ?
+                                `
+                                <div class="resultados-left">
+                                    <h6>Vencidos por el campeon</h6>
+                                    <span class="seleccionador-docecasas" data-place="fase-final" data-name="${tipo}">Final -> ${torneo.vencido.final || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-semis" data-name="${tipo}">Semis -> ${torneo.vencido.semis || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-cuartos" data-name="${tipo}">Ro8 -> ${torneo.vencido.cuartos || "---"}</span>
+                                    <span class="seleccionador-docecasas" data-place="fase-octavos" data-name="${tipo}">Ro16 -> ${torneo.vencido.octavos || "---"}</span>
+                                </div>
+                                `
+                                :
+                                ''
+                            }
+                            <div class="resultados-right">
+                                <h6>Top 4</h6>
+                                <span class="seleccionador-docecasas" data-place="top-1" data-name="${tipo}">1° -> ${torneo.prizepool["1"].player||"A definir"} (12pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-2" data-name="${tipo}">2° -> ${torneo.prizepool["2"].player||"A definir"} (6pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-3" data-name="${tipo}">3° -> ${torneo.prizepool["3"].player||"A definir"} (3pts)</span>
+                                <span class="seleccionador-docecasas" data-place="top-4" data-name="${tipo}">4° -> ${torneo.prizepool["4"].player||"A definir"} (1pt)</span>
+                            </div>
+                        </div>
                     <picture>
-                        <img src="/img/this/logo-atenea.png" />
+                        <img src="/img/this/fondos12casas/${tipo}.png" />
                     </picture>
                 </div>
                     <table id="seed-table" class="table table-striped"></table>
@@ -4075,6 +5814,9 @@ async function mostrarContenido(ruta) {
                     <img src="/img/this/fondo-12casas-bracket.png" />
                     <picture class="doce-casas-bracket-logo">
                         <img src="/img/this/12-casas-final.png" />
+                    </picture>
+                    <picture class="doce-casas-map-logo">
+                        <img src="/img/this/fondos12casas/mapas/${tipo}.png" />
                     </picture>
                     <div id="right-brackets">
                         <div data-match="${buscarPartida(torneo.matches, 5).id}" id="fifth-match" class="match">
@@ -4237,7 +5979,115 @@ async function mostrarContenido(ruta) {
                     document.getElementById("main-cont").appendChild(loadPlayersDiv);
 
                 })
-                
+                seleccionadores = document.querySelectorAll(".seleccionador-docecasas");
+                seleccionadores.forEach(seleccionador => {
+                    seleccionador.addEventListener("dblclick", () => {
+                        let div = document.createElement("div");
+                        div.classList.add("popup-background");
+                        div.addEventListener("click", (event) => {
+                            if (event.target === div) {
+                                div.remove();
+                            }
+                        })
+    
+                        let span = document.createElement("span");
+                        span.classList.add("popup-overlay");
+                        div.appendChild(span);
+    
+                        let p1 = document.createElement("p");
+                        p1.innerText = `Que jugador fue ${seleccionador.dataset.place.replace("fase-","vencido en ").replace("top-","top ").toUpperCase()}`;
+                        span.appendChild(p1);
+    
+                        let input = document.createElement("input");
+                        span.appendChild(input);
+    
+                        let ul = document.createElement("ul");
+    
+                        input.addEventListener("input", ()=>{
+                            // console.log();
+                            ul.innerHTML = "";
+                            torneo.players.forEach(jugador => {
+                                if (jugador.nick.toLowerCase().trim().replaceAll(" ", "").includes(input.value.toLowerCase().trim().replaceAll(" ", ""))) {
+                                    let li = document.createElement("li");
+                                    li.innerHTML = `<p>${jugador.nick}</p>`;
+            
+                                    // <i class="fas fa-share"></i>
+                                    let submitButton = document.createElement("i");
+                                    submitButton.classList.add("fas");
+                                    submitButton.classList.add("fa-share");
+    
+                                    
+                                    submitButton.addEventListener("click", () =>{
+                                        definirJugador(jugador.id, seleccionador.dataset.place, tipo)
+                                        div.remove();
+                                    })
+                                    li.appendChild(submitButton);
+    
+                                    ul.appendChild(li);
+                                }
+                            })
+                            {
+                                let li = document.createElement("li");
+                                li.innerHTML = `<p>${null}</p>`;
+        
+                                // <i class="fas fa-share"></i>
+                                let submitButton = document.createElement("i");
+                                submitButton.classList.add("fas");
+                                submitButton.classList.add("fa-share");
+
+                                
+                                submitButton.addEventListener("click", () =>{
+                                    definirJugador(null, seleccionador.dataset.place, tipo)
+                                    div.remove();
+                                })
+                                li.appendChild(submitButton);
+
+                                ul.appendChild(li);
+                            }
+                        })
+    
+                        span.appendChild(ul);
+    
+                        torneo.players.forEach(jugador => {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${jugador.nick}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+    
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(jugador.id, seleccionador.dataset.place,tipo);
+                                div.remove();
+                            });
+                            li.appendChild(submitButton);
+    
+                            ul.appendChild(li);
+                        })
+                        {
+                            let li = document.createElement("li");
+                            li.innerHTML = `<p>${null}</p>`;
+    
+                            // <i class="fas fa-share"></i>
+                            let submitButton = document.createElement("i");
+                            submitButton.classList.add("fas");
+                            submitButton.classList.add("fa-share");
+
+                            
+                            submitButton.addEventListener("click", () =>{
+                                definirJugador(null, seleccionador.dataset.place, tipo)
+                                div.remove();
+                            })
+                            li.appendChild(submitButton);
+
+                            ul.appendChild(li);
+                        }
+    
+                        document.body.appendChild(div);
+                    })
+                })
             }
             actualizarLinks();
             break;
@@ -4248,63 +6098,13 @@ async function mostrarContenido(ruta) {
             
             let campeon;
             // conso
-            if (torneo.matches[torneo.matches.length - 1].ganador) {
-                campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
-            }le.log(buscarPartida(1).id);;
+            // if (torneo.matches[torneo.matches.length - 1].ganador) {
+            //     campeon = buscarJugador(torneo.players, torneo.matches[torneo.matches.length - 1].ganador);
+            // }le.lo else if (torneo.prizepool["1"] && torneo.prizepool["1"].player) {
+            //     campeon = torneo.prizepool["1"].player;
+            // }g(buscarPartida(1).id);;
             contenido = `
-            <div id="left-bar" class="doce-casas table-cont">
-                <h3 id="seed-table-header">Clasificacion</h3>
-                <div class="left-bar-rest">
-                    <h3>${campeon || "A definir"}</h3>
-                    <picture>
-                        <img src="/img/this/logo-atenea.png" />
-                    </picture>
-                </div>
-                    <table id="seed-table" class="table table-striped"></table>
-                </div>
-                <div id="main" class="doce-casas">
-                    <div id="left-brackets">
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 1).id}" id="first-match" class="match">
-                            <span id="slot-1">${buscarPartida(((categorySelector.value - 1) * 15) + 1).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 1).jugadorUno.id).nick : 1}</span>
-                            <span id="slot-9">${buscarPartida(((categorySelector.value - 1) * 15) + 1).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 1).jugadorDos.id).nick : 9}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 2).id}" id="second-match" class="match">
-                            <span id="slot-5">${buscarPartida(((categorySelector.value - 1) * 15) + 2).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 2).jugadorUno.id).nick : 5}</span>
-                            <span id="slot-13">${buscarPartida(((categorySelector.value - 1) * 15) + 2).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 2).jugadorDos.id).nick : 13}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 3).id}" id="third-match" class="match">
-                            <span id="slot-3">${buscarPartida(((categorySelector.value - 1) * 15) + 3).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 3).jugadorUno.id).nick : 3}</span>
-                            <span id="slot-11">${buscarPartida(((categorySelector.value - 1) * 15) + 3).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 3).jugadorDos.id).nick : 11}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 4).id}" id="fourth-match" class="match">
-                            <span id="slot-7">${buscarPartida(((categorySelector.value - 1) * 15) + 4).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 4).jugadorUno.id).nick : 7}</span>
-                            <span id="slot-15">${buscarPartida(((categorySelector.value - 1) * 15) + 4).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 4).jugadorDos.id).nick : 15}</span>
-                        </div>
-                    </div>
-                    <img src="/img/this/fondo-12casas-bracket.png" />
-                    <picture class="doce-casas-bracket-logo">
-                        <img src="/img/this/12-casas-final.png" />
-                    </picture>
-                    <div id="right-brackets">
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 5).id}" id="fifth-match" class="match">
-                            <span id="slot-2">${buscarPartida(((categorySelector.value - 1) * 15) + 5).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 5).jugadorUno.id).nick : 2}</span>
-                            <span id="slot-10">${buscarPartida(((categorySelector.value - 1) * 15) + 5).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 5).jugadorDos.id).nick : 10}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 6).id}" id="sixth-match" class="match">
-                            <span id="slot-6">${buscarPartida(((categorySelector.value - 1) * 15) + 6).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 6).jugadorUno.id).nick : 6}</span>
-                            <span id="slot-14">${buscarPartida(((categorySelector.value - 1) * 15) + 6).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 6).jugadorDos.id).nick : 14}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 7).id}" id="seventh-match" class="match">
-                            <span id="slot-4">${buscarPartida(((categorySelector.value - 1) * 15) + 7).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 7).jugadorUno.id).nick : 4}</span>
-                            <span id="slot-12">${buscarPartida(((categorySelector.value - 1) * 15) + 7).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 7).jugadorDos.id).nick : 12}</span>
-                        </div>
-                        <div data-match="${buscarPartida(((categorySelector.value - 1) * 15) + 8).id}" id="eight-match" class="match">
-                            <span id="slot-8">${buscarPartida(((categorySelector.value - 1) * 15) + 8).jugadorUno.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 8).jugadorUno.id).nick : 8}</span>
-                            <span id="slot-16">${buscarPartida(((categorySelector.value - 1) * 15) + 8).jugadorDos.id ? buscarJugador(buscarPartida(((categorySelector.value - 1) * 15) + 8).jugadorDos.id).nick : 16}</span>
-                        </div>
-                    </div>
-                </div>
-                <div id="inv"></div>
+                <div class="fondo-12casas-nuevo"></div>
             `;
             document.getElementById("main-cont").innerHTML = contenido;
 

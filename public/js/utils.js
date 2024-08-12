@@ -168,7 +168,7 @@ function verifyAdmin() {
     let data = getCookie("user");
     // console.log("Verificando..." + data);
     // console.log(data == "$2a$10$S71t6BVaKWDDPEmietxwme0dN81mzhz5M0mL0LUUA6LqohqfV0Cmq");
-    return data == "$2a$10$S71t6BVaKWDDPEmietxwme0dN81mzhz5M0mL0LUUA6LqohqfV0Cqz";
+    return data == "$2a$10$S71t6BVaKWDDPEmietxwme0dN81mzhz5M0mL0LUUA6LqohqfV0Cmq";
 }
 
 function setCookie(cname, cvalue, exdays) {
